@@ -85,12 +85,12 @@ public class ProductosDTO {
     @Override
     public String toString(){
         return getClass().getName()
-        +"\n IDProducto :    "+ getIDProducto()
-        +"\n ProductoNombre:"+ getProductoNombre()
-        +"\n ProductoCodigo:"+ getProductoCodigo()
-        +"\n ProductoPrecio:"+ getProductoPrecio()
-        +"\n ProductoEstado:"+ getProductoEstado()
-        +"\n FechaCreacion: "+ getFechaCreacion()
-        +"\n FechaModifica  "+ getFechaModifica();
+        +"\n IDProducto :       "+ getIDProducto()
+        +"\n ProductoNombre:    "+ getProductoNombre()
+        +"\n ProductoCodigo:    "+ getProductoCodigo()
+        +"\n ProductoPrecio:    "+ getProductoPrecio()
+        +"\n ProductoEstado:    "+ getProductoEstado()
+        +"\n FechaCreacion:     "+ getFechaCreacion()
+        +"\n FechaModifica:     "+ getFechaModifica();
     }
 }

@@ -8,4 +8,5 @@ public interface IDAO<T> {
     public List<T> readAll ()           throws Exception;
     public boolean update (T entity)    throws Exception;
     public boolean delete (Integer id)  throws Exception;
+    public Integer getMaxRow()          throws Exception;
 }
