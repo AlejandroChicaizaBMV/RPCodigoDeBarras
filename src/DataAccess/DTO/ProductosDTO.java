@@ -1,0 +1,96 @@
+package DataAccess.DTO;
+
+public class ProductosDTO {
+    private Integer IDProducto;
+    private String ProductoNombre;
+    private String ProductoCodigo;
+    private Float  ProductoPrecio;
+    private String ProductoEstado;
+    private String FechaCreacion;
+    private String FechaModifica;
+
+    public ProductosDTO() {
+    }
+
+    public ProductosDTO (String ProductoNombre){
+        this.ProductoNombre = ProductoNombre;
+    }
+
+    public ProductosDTO(int IDProducto, String ProductoNombre, String ProductoCodigo, float ProductoPrecio, String ProductoEstado, String FechaCreacion, String FechaModifica){
+        this.IDProducto = IDProducto;
+        this.ProductoNombre = ProductoNombre;
+        this.ProductoCodigo = ProductoCodigo;
+        this.ProductoPrecio = ProductoPrecio;
+        this.ProductoEstado = ProductoEstado;
+        this.FechaCreacion = FechaCreacion;
+        this.FechaModifica = FechaModifica;
+    }
+
+    public Integer getIDProducto() {
+        return IDProducto;
+    }
+
+    public void setIDProducto(Integer iDProducto) {
+        IDProducto = iDProducto;
+    }
+
+    public String getProductoNombre() {
+        return ProductoNombre;
+    }
+
+    public void setProductoNombre(String productoNombre) {
+        ProductoNombre = productoNombre;
+    }
+
+    public String getProductoCodigo() {
+        return ProductoCodigo;
+    }
+
+    public void setProductoCodigo(String productoCodigo) {
+        ProductoCodigo = productoCodigo;
+    }
+
+    public Float getProductoPrecio() {
+        return ProductoPrecio;
+    }
+
+    public void setProductoPrecio(Float productoPrecio) {
+        ProductoPrecio = productoPrecio;
+    }
+
+    public String getProductoEstado() {
+        return ProductoEstado;
+    }
+
+    public void setProductoEstado(String productoEstado) {
+        ProductoEstado = productoEstado;
+    }
+
+    public String getFechaCreacion() {
+        return FechaCreacion;
+    }
+
+    public void setFechaCreacion(String fechaCreacion) {
+        FechaCreacion = fechaCreacion;
+    }
+
+    public String getFechaModifica() {
+        return FechaModifica;
+    }
+
+    public void setFechaModifica(String fechaModifica) {
+        FechaModifica = fechaModifica;
+    }
+
+    @Override
+    public String toString(){
+        return getClass().getName()
+        +"\n IDProducto :    "+ getIDProducto()
+        +"\n ProductoNombre:"+ getProductoNombre()
+        +"\n ProductoCodigo:"+ getProductoCodigo()
+        +"\n ProductoPrecio:"+ getProductoPrecio()
+        +"\n ProductoEstado:"+ getProductoEstado()
+        +"\n FechaCreacion: "+ getFechaCreacion()
+        +"\n FechaModifica  "+ getFechaModifica();
+    }
+}
