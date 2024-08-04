@@ -14,11 +14,6 @@ import DataAccess.DTO.ProductosDTO;
 
 public class ProductosDAO extends SQLiteDataHelper implements IDAO<ProductosDTO> {
 
-
-
-
-
-    //Cosas de la interfaz--------------------------------------------------------------
     @Override
     public ProductosDTO readBy(Integer id) throws Exception {
         ProductosDTO oP = new ProductosDTO();
@@ -57,10 +52,12 @@ public class ProductosDAO extends SQLiteDataHelper implements IDAO<ProductosDTO>
         try {
             Connection conn         = openConnection();
             PreparedStatement pstmt = conn.prepareStatement(query);
+            
             pstmt.setString(1,entity.getProductoNombre());
             pstmt.setString(2,entity.getProductoCodigo());
             pstmt.setFloat(3,entity.getProductoPrecio());
             pstmt.executeUpdate();
+            
             return true;
         } catch (SQLException e) {
             throw e;
