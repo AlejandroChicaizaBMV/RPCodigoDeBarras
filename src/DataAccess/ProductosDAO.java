@@ -31,13 +31,15 @@ public class ProductosDAO extends SQLiteDataHelper implements IDAO<ProductosDTO>
     @Override
     public List<ProductosDTO> readAll() throws Exception {
         List <ProductosDTO> lst =  new ArrayList<>();
-        String query = "SELECT ProductosID "
+        String query = "SELECT IDProducto  "
                      + ",ProductoNombre    "
-                     + ",Estado            "
-                     + ",FechaCrea         "
+                     + ",ProductoCodigo    "
+                     + ",ProductoPrecio    "
+                     + ",ProductoEstado    "
+                     + ",FechaCreacion     "
                      + ",FechaModifica     "
                      + "FROM Productos     "
-                     + "WHERE Estado = 'A' ";
+                     + "WHERE ProductoEstado = 'A' ";
 
         try {
             Connection conn = openConnection();

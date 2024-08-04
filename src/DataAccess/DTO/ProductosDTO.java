@@ -17,13 +17,13 @@ public class ProductosDTO {
     }
 
     public ProductosDTO(int IDProducto, String ProductoNombre, String ProductoCodigo, float ProductoPrecio, String ProductoEstado, String FechaCreacion, String FechaModifica){
-        this.IDProducto = IDProducto;
+        this.IDProducto     = IDProducto;
         this.ProductoNombre = ProductoNombre;
         this.ProductoCodigo = ProductoCodigo;
         this.ProductoPrecio = ProductoPrecio;
         this.ProductoEstado = ProductoEstado;
-        this.FechaCreacion = FechaCreacion;
-        this.FechaModifica = FechaModifica;
+        this.FechaCreacion  = FechaCreacion;
+        this.FechaModifica  = FechaModifica;
     }
 
     public Integer getIDProducto() {
