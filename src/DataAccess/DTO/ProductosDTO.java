@@ -1,29 +1,44 @@
 package DataAccess.DTO;
 
 public class ProductosDTO {
-    private Integer IDProducto;
-    private String ProductoNombre;
-    private String ProductoCodigo;
-    private Float  ProductoPrecio;
-    private String ProductoEstado;
-    private String FechaCreacion;
-    private String FechaModifica;
 
+    private Integer IDProducto;
+    private String  ProductoNombre;
+    private String  ProductoCodigo;
+    private Double  ProductoPrecio;
+    private Integer IDCatalogoI;
+    private Integer IDCatalogoII;
+    private String  ProductoEstado;
+    private String  FechaCreacion;
+    private String  FechaModifica;
+    
     public ProductosDTO() {
     }
 
-    public ProductosDTO (String ProductoNombre){
+    public ProductosDTO (String ProductoNombre) {
         this.ProductoNombre = ProductoNombre;
     }
 
-    public ProductosDTO(int IDProducto, String ProductoNombre, String ProductoCodigo, float ProductoPrecio, String ProductoEstado, String FechaCreacion, String FechaModifica){
-        this.IDProducto     = IDProducto;
-        this.ProductoNombre = ProductoNombre;
-        this.ProductoCodigo = ProductoCodigo;
-        this.ProductoPrecio = ProductoPrecio;
-        this.ProductoEstado = ProductoEstado;
-        this.FechaCreacion  = FechaCreacion;
-        this.FechaModifica  = FechaModifica;
+    public ProductosDTO(String productoNombre, String productoCodigo, Double productoPrecio, Integer iDCatalogoI,Integer iDCatalogoII) {
+        ProductoNombre  = productoNombre;
+        ProductoCodigo  = productoCodigo;
+        ProductoPrecio  = productoPrecio;
+        IDCatalogoI     = iDCatalogoI;
+        IDCatalogoII    = iDCatalogoII;
+    }
+    
+
+    public ProductosDTO(Integer iDProducto, String productoNombre, String productoCodigo, Double productoPrecio,
+    Integer iDCatalogoI, Integer iDCatalogoII, String productoEstado, String fechaCreacion, String fechaModifica) {
+        IDProducto      = iDProducto;
+        ProductoNombre  = productoNombre;
+        ProductoCodigo  = productoCodigo;
+        ProductoPrecio  = productoPrecio;
+        IDCatalogoI     = iDCatalogoI;
+        IDCatalogoII    = iDCatalogoII;
+        ProductoEstado  = productoEstado;
+        FechaCreacion   = fechaCreacion;
+        FechaModifica   = fechaModifica;
     }
 
     public Integer getIDProducto() {
@@ -50,12 +65,28 @@ public class ProductosDTO {
         ProductoCodigo = productoCodigo;
     }
 
-    public Float getProductoPrecio() {
+    public Double getProductoPrecio() {
         return ProductoPrecio;
     }
 
-    public void setProductoPrecio(Float productoPrecio) {
+    public void setProductoPrecio(Double productoPrecio) {
         ProductoPrecio = productoPrecio;
+    }
+
+    public Integer getIDCatalogoI() {
+        return IDCatalogoI;
+    }
+
+    public void setIDCatalogoI(Integer iDCatalogoI) {
+        IDCatalogoI = iDCatalogoI;
+    }
+
+    public Integer getIDCatalogoII() {
+        return IDCatalogoII;
+    }
+
+    public void setIDCatalogoII(Integer iDCatalogoII) {
+        IDCatalogoII = iDCatalogoII;
     }
 
     public String getProductoEstado() {
@@ -82,6 +113,9 @@ public class ProductosDTO {
         FechaModifica = fechaModifica;
     }
 
+
+
+
     @Override
     public String toString(){
         return getClass().getName()
@@ -89,6 +123,8 @@ public class ProductosDTO {
         +"\n ProductoNombre:    "+ getProductoNombre()
         +"\n ProductoCodigo:    "+ getProductoCodigo()
         +"\n ProductoPrecio:    "+ getProductoPrecio()
+        +"\n IDCatalogoI:       "+ getIDCatalogoI()
+        +"\n IDCatalogoII:      "+ getIDCatalogoII()
         +"\n ProductoEstado:    "+ getProductoEstado()
         +"\n FechaCreacion:     "+ getFechaCreacion()
         +"\n FechaModifica:     "+ getFechaModifica();

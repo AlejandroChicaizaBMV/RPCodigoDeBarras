@@ -21,6 +21,8 @@ public class ProductosDAO extends SQLiteDataHelper implements IDAO<ProductosDTO>
                      + ",ProductoNombre    "
                      + ",ProductoCodigo    "
                      + ",ProductoPrecio    "
+                     + ",IDCatalogoI       "
+                     + ",IDCatalogoII      "
                      + ",ProductoEstado    "
                      + ",FechaCreacion     "
                      + ",FechaModifica     "
@@ -32,13 +34,15 @@ public class ProductosDAO extends SQLiteDataHelper implements IDAO<ProductosDTO>
             ResultSet  rs   = stmt.executeQuery(query);
 
             while(rs.next()){
-                oP= new ProductosDTO(rs.getInt(1), 
-                                                  rs.getString(2), 
-                                                  rs.getString(3), 
-                                                  rs.getFloat(4), 
-                                                  rs.getString(5),
-                                                  rs.getString(6),
-                                                  rs.getString(7));
+                oP= new ProductosDTO(rs.getInt(1),
+                                     rs.getString(2),
+                                     rs.getString(3),
+                                     rs.getDouble(4),
+                                     rs.getInt(5),
+                                     rs.getInt(6),
+                                     rs.getString(7),
+                                     rs.getString(8),
+                                     rs.getString(9));
             }
         } catch (SQLException e) {
             throw e;
@@ -48,14 +52,16 @@ public class ProductosDAO extends SQLiteDataHelper implements IDAO<ProductosDTO>
 
     @Override
     public boolean create(ProductosDTO entity) throws Exception {
-        String query = "INSERT INTO Productos (ProductoNombre, ProductoCodigo, ProductoPrecio) VALUES (?,?,?)";
+        String query = "INSERT INTO Productos (ProductoNombre, ProductoCodigo ,IDCatalogoI ,IDCatalogoII ,ProductoPrecio) VALUES (?,?,?,?,?)";
         try {
             Connection conn         = openConnection();
             PreparedStatement pstmt = conn.prepareStatement(query);
             
             pstmt.setString(1,entity.getProductoNombre());
             pstmt.setString(2,entity.getProductoCodigo());
-            pstmt.setFloat(3,entity.getProductoPrecio());
+            pstmt.setInt(3,entity.getIDCatalogoI());
+            pstmt.setInt(4, entity.getIDCatalogoII());
+            pstmt.setDouble(5,entity.getProductoPrecio());
             pstmt.executeUpdate();
             
             return true;
@@ -71,11 +77,13 @@ public class ProductosDAO extends SQLiteDataHelper implements IDAO<ProductosDTO>
                      + ",ProductoNombre    "
                      + ",ProductoCodigo    "
                      + ",ProductoPrecio    "
+                     + ",IDCatalogoI       "
+                     + ",IDCatalogoII      "
                      + ",ProductoEstado    "
                      + ",FechaCreacion     "
                      + ",FechaModifica     "
                      + "FROM Productos     "
-                     + "WHERE ProductoEstado = 'A' ";
+                     + "WHERE ProductoEstado = 'A'";
 
         try {
             Connection conn = openConnection();
@@ -83,13 +91,15 @@ public class ProductosDAO extends SQLiteDataHelper implements IDAO<ProductosDTO>
             ResultSet rs    = stmt.executeQuery(query);
 
             while(rs.next()){
-                ProductosDTO p = new ProductosDTO(rs.getInt(1), 
-                                                  rs.getString(2), 
-                                                  rs.getString(3), 
-                                                  rs.getFloat(4), 
-                                                  rs.getString(5),
-                                                  rs.getString(6),
-                                                  rs.getString(7));
+                ProductosDTO p = new ProductosDTO(rs.getInt(1),
+                                                  rs.getString(2),
+                                                  rs.getString(3),
+                                                  rs.getDouble(4),
+                                                  rs.getInt(5),
+                                                  rs.getInt(6),
+                                                  rs.getString(7),
+                                                  rs.getString(8),
+                                                  rs.getString(9));
                 lst.add(p);                                    
             }
         } catch (SQLException e) {
@@ -108,7 +118,7 @@ public class ProductosDAO extends SQLiteDataHelper implements IDAO<ProductosDTO>
             PreparedStatement pstmt = conn.prepareStatement(query);
             pstmt.setString(1, entity.getProductoNombre());
             pstmt.setString(2, entity.getProductoCodigo());
-            pstmt.setFloat (3, entity.getProductoPrecio());
+            pstmt.setDouble (3, entity.getProductoPrecio());
             pstmt.setString(4, dtf.format(now).toString());
             pstmt.setInt(5, entity.getIDProducto());
             pstmt.executeUpdate();
