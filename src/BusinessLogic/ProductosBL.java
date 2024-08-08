@@ -15,12 +15,12 @@ public class ProductosBL {
         return pDAO.readAll();
     }
 
-    public ProductosDTO getByIdProducto(int idProducto) throws Exception{
+    public ProductosDTO getBy(int idProducto) throws Exception{
         productos = pDAO.readBy(idProducto);
         return productos;
     } 
 
-    public boolean create (ProductosDTO productosDTO) throws Exception{
+    public boolean add (ProductosDTO productosDTO) throws Exception{
         return pDAO.create(productosDTO);
     }
 
@@ -32,7 +32,7 @@ public class ProductosBL {
         return pDAO.delete(idProducto);
     }
 
-    public Integer getMaxRow() throws Exception{
+    public Integer getRowCount() throws Exception{
         return pDAO.getMaxRow();
     }
 }

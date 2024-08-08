@@ -13,7 +13,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 public abstract class Styles {
-    public static final Color COLOR_FONT = new Color (200, 100, 50);
+    public static final Color COLOR_FONT = new Color (0, 0, 0);
     public static final Color COLOR_FONT_LIGHT = new Color (100, 100, 100);
     public static final Color COLOR_CURSOR = Color.black;
     public static final Color COLOR_BORDER = Color.lightGray;
@@ -28,9 +28,9 @@ public abstract class Styles {
     public static final Cursor Cursor_HAND    = new Cursor(Cursor.HAND_CURSOR);
     public static final Cursor Cursor_DEFAULT = new Cursor (Cursor.DEFAULT_CURSOR);
 
-    public static final URL URL_MAIN   = Styles.class.getResource("");
-    public static final URL URL_LOGO   = Styles.class.getResource("");
-    public static final URL URL_SPLASH = Styles.class.getResource("");
+    public static final URL URL_MAIN   = Styles.class.getResource("/UserInterface/Resources/Img/prjIMG.jpg");
+    public static final URL URL_LOGO   = Styles.class.getResource("/UserInterface/Resources/Img/Logo.jpg");
+    public static final URL URL_SPLASH = Styles.class.getResource("/UserInterface/Resources/Img/Splash.jpg");
     
     public static final CompoundBorder createBorderRect(){
         return BorderFactory.createCompoundBorder(new LineBorder(Color.lightGray),
@@ -45,7 +45,7 @@ public abstract class Styles {
         JOptionPane.showMessageDialog(null, msg, "🦁 PRODUCTOS", JOptionPane.OK_CANCEL_OPTION);
     }
 
-    public static final boolean showConFirmYesNo(String msg){
+    public static final boolean showConfirmYesNo(String msg){
         return (JOptionPane.showConfirmDialog(null, msg, "🤡 PRODUCTOS", JOptionPane.YES_NO_CANCEL_OPTION) == JOptionPane.YES_OPTION);
     }
 }
