@@ -28,6 +28,8 @@ public abstract class Styles {
     public static final Cursor Cursor_HAND    = new Cursor(Cursor.HAND_CURSOR);
     public static final Cursor Cursor_DEFAULT = new Cursor (Cursor.DEFAULT_CURSOR);
 
+    public static final URL URL_FONDO  = Styles.class.getResource("/UserInterface/Resources/Img/fondo.jpg");
+    public static final URL URL_BOTON  = Styles.class.getResource("/UserInterface/Resources/Img/botton.png");
     public static final URL URL_MAIN   = Styles.class.getResource("/UserInterface/Resources/Img/prjIMG.jpg");
     public static final URL URL_LOGO   = Styles.class.getResource("/UserInterface/Resources/Img/Logo.jpg");
     public static final URL URL_SPLASH = Styles.class.getResource("/UserInterface/Resources/Img/Splash.jpg");

@@ -57,7 +57,7 @@ VALUES
 CREATE TABLE Productos (
     IDProducto          INTEGER PRIMARY KEY AUTOINCREMENT,
     ProductoNombre      VARCHAR(50) NOT NULL,
-    ProductoCodigo      VARCHAR(10) NOT NULL UNIQUE,
+    ProductoCodigo      VARCHAR(13) NOT NULL UNIQUE,
     ProductoPrecio      DECIMAL(10, 2) NOT NULL,
     IDCatalogoI         INTEGER NOT NULL,
     IDCatalogoII        INTEGER NOT NULL,
@@ -71,12 +71,12 @@ CREATE TABLE Productos (
 -- Insertar datos en la tabla Productos
 INSERT INTO Productos (ProductoNombre, ProductoCodigo, IDCatalogoI, IDCatalogoII, ProductoPrecio)
 VALUES
-('Leche'    ,'1234567890'   ,1 , 1 ,1),
-('Aceite'   ,'1234567891'   ,1 , 2 ,1.25),
-('Huevos'   ,'1234567892'   ,1 , 2 ,1.5),
-('Chocolate','1234567893'   ,1 , 6 ,1.75),
-('Verduras' ,'1234567894'   ,1 , 7 ,0.5),
-('Perfume'  ,'1234567895'   ,2 , 8 ,5);
+('Leche'    ,'1234567890120'   ,1 , 1 ,1),
+('Aceite'   ,'1234567890121'   ,1 , 2 ,1.25),
+('Huevos'   ,'1234567890122'   ,1 , 2 ,1.5),
+('Chocolate','1234567890123'   ,1 , 6 ,1.75),
+('Verduras' ,'1234567890124'   ,1 , 7 ,0.5),
+('Perfume'  ,'1234567890125'   ,2 , 8 ,5);
 
 
 

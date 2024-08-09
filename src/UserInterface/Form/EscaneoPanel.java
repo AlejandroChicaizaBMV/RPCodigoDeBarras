@@ -1,6 +1,7 @@
 package UserInterface.Form;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -12,8 +13,8 @@ public class EscaneoPanel extends JPanel {
 
     public EscaneoPanel(){
         setLayout(new BorderLayout());
-        messageLabel = new JLabel("Esperando a que escanee el código del producto...");
-        add(messageLabel, BorderLayout.CENTER);
+        messageLabel = new JLabel(" ".repeat(103)+"Esperando a que escanee el código del producto...");
+        add(messageLabel,BorderLayout.CENTER);
 
         barcodeField = new JTextField();
         barcodeField.setPreferredSize(new Dimension(0, 0)); // Ocultar el campo de texto

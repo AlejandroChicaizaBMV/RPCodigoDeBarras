@@ -1,15 +1,3 @@
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
-
-import BusinessLogic.CatalogoIBL;
-import BusinessLogic.CatalogoIIBL;
-import BusinessLogic.ProductosBL;
-import DataAccess.CatalogoIDAO;
-import DataAccess.CatalogoIIDAO;
-import DataAccess.ProductosDAO;
-import DataAccess.DTO.CatalogoIDTO;
-import DataAccess.DTO.CatalogoIIDTO;
-import DataAccess.DTO.ProductosDTO;
 import UserInterface.Form.MainForm;
 import UserInterface.Form.SplashScreenForm;
 
@@ -27,7 +15,7 @@ public class App {
         // } 
     
        SplashScreenForm.show();
-       new MainForm("Codigo De Barras");
+       new MainForm("Codigo De Barras",true);
     
     
     
